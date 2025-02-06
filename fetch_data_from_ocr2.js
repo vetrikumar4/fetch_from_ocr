@@ -1,12 +1,9 @@
 const express = require("express");
+const router = express.Router();
 const axios = require("axios");
 const fs = require("fs");
 const FormData = require("form-data");
-
-const app = express();
-const port = 3000; // Set the port for the Express app
-
-app.post("/upload", (req, res) => {
+router.post("/ocr", async (req, res) => {
   // Create a new FormData object
   const form = new FormData();
 
@@ -42,7 +39,7 @@ app.post("/upload", (req, res) => {
   const url =
     "https://aura-ai.aurainsure.tech/v1/sme/?document_name=emirates-id";
   const token1 =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb21lIjp7ImNsaWVudF9pZCI6MTIzNCwicHJvZHVjdF9pZHMiOls0LDUsNl0sInByb2R1Y3RfbmFtZXMiOlsic21lIiwiaGVhbHRoIiwiYXV0byJdLCJleHAiOjE3Mzg4MTAwODcuNjg0NzM1fX0.e-9QOAsoWIMVVGDRwFddvLr8BfsigHTFGg92Bnwb_I4";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb21lIjp7ImNsaWVudF9pZCI6MTIzNCwicHJvZHVjdF9pZHMiOls0LDUsNl0sInByb2R1Y3RfbmFtZXMiOlsic21lIiwiaGVhbHRoIiwiYXV0byJdLCJleHAiOjE3Mzg4MTcyMzEuMTU5NTIzfX0.b41lIDoIFDJCr8CX9euKkPZH7yczHFx4lZ2GfpXS_2U";
 
   // Perform the POST request using axios
   axios
@@ -64,10 +61,4 @@ app.post("/upload", (req, res) => {
     });
 });
 
-app.use("/check", (req, res) => {
-  res.send("Hello");
-});
-// Start the Express server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+module.exports = router;
