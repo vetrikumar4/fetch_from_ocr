@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "./fetch_data_from_ocr.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "/" }]
+}

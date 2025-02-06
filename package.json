@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.9",
+    "qs": "^6.14.0"
+  },
+  "name": "vercel-testing",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "fetch_data_from_ocr.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon fetch_data_from_ocr.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
